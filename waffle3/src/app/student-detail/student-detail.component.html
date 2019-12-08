@@ -1,0 +1,17 @@
+<div *ngIf="student">
+    {{student.id}} {{student.name}} {{student.major}}
+    <div>
+        <span>id: </span> {{student.id}}
+    </div>
+    <div>
+        <label>Name:
+            <input [(ngModel)]="student.name" placeholder="name"/>
+        </label>
+        <label>Major:
+            <input [(ngModel)]="student.major" placeholder="name"/>
+        </label>
+
+        <button (click)="goBack()">go back</button>
+        <button (click)="save()">save</button>
+    </div>
+</div>

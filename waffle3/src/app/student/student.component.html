@@ -1,0 +1,23 @@
+<app-student-detail [student]="selectedStudent"></app-student-detail>
+
+<ul>
+    <li *ngFor="let student of students" (click)="onSelect(student)">
+      <div>id : {{student.id}}</div>
+      <div>name : {{student.name}}</div>
+      <div>major : {{student.major}}</div>
+      <button class="delete" title="delete"
+      (click)="delete(student)">x</button>
+    </li>
+</ul>
+<div>
+    <label>Student name:
+      <input #studentName />
+    </label>
+    <label>    Student Major:
+        <input #studentMajor />
+      </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(studentName.value, studentMajor.value); studentName.value=''; studentMajor.value=''">
+      add
+    </button>
+</div>
