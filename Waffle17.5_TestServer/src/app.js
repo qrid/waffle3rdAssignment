@@ -42,7 +42,7 @@ var cookieParser = require("cookie-parser");
 var typeorm_1 = require("typeorm");
 var user_entity_1 = require("./entity/user.entity");
 typeorm_1.createConnection().then(function (connection) {
-    var userRepository = connection.getRepository(user_entity_1.User);
+    var userRepository = connection.getRepository(user_entity_1.Student);
     var app = express();
     var port = 3000;
     app.use(bodyParser.json());

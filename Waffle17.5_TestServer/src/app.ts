@@ -3,10 +3,10 @@ import { Request, Response } from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import { createConnection } from 'typeorm';
-import { User } from './entity/user.entity';
+import { Student } from './entity/user.entity';
 
 createConnection().then(connection => {
-    const userRepository = connection.getRepository(User);
+    const userRepository = connection.getRepository(Student);
 
     const app = express();
     const port = 3000;
