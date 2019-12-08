@@ -11,6 +11,10 @@ import { StudentComponent } from './student/student.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatButtonModule } from '@angular/material/button'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { MessagesComponent } from './messages/messages.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, 
+    MatInputModule, 
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

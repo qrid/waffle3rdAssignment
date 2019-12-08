@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class StudentService {
 
-  private studentsUrl = 'http://localhost:3000/users'; // 'api/students';
+  private studentsUrl = "http://localhost:3000/users"; // 'api/students';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -30,14 +30,14 @@ export class StudentService {
     return this.http.put(this.studentsUrl, student, this.httpOptions);
   }
 
-  addStudent (student: Student): Observable<Student> {
+  addStudent (_student:{name: string, major: string}): Observable<Student> {
     this.log('Try adding Student...');
-    return this.http.post<Student>(this.studentsUrl, student, this.httpOptions).pipe(tap((newStudent: Student) => this.log(`added student w/id=${newStudent.id}`)));
+    return this.http.post<Student>(this.studentsUrl, _student, this.httpOptions)
+      .pipe(tap((newStudent: Student) => this.log(`added student w/id=${newStudent.id}`)));
   }
   
-  deleteStudent (student: Student | number): Observable<Student> {
-    const id = typeof(student) === 'number' ? student : student.id;
-    const url = `${this.studentsUrl}/${id}`;
+  deleteStudent (student: Student): Observable<Student> {
+    const url = `${this.studentsUrl}/${student.id}`;
 
     return this.http.delete<Student>(url,this.httpOptions);
   }

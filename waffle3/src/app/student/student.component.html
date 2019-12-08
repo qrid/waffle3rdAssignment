@@ -11,11 +11,15 @@
 </ul>
 <div>
     <label>Student name:
-      <input #studentName />
+      <mat-form-field>
+        <input matInput #studentName />
+      </mat-form-field>
     </label>
     <label>    Student Major:
-        <input #studentMajor />
-      </label>
+      <mat-form-field>
+        <input matInput #studentMajor />
+      </mat-form-field>
+    </label>
     <!-- (click) passes input value to add() and then clears the input -->
     <button (click)="add(studentName.value, studentMajor.value); studentName.value=''; studentMajor.value=''">
       add

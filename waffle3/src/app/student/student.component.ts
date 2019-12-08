@@ -28,7 +28,7 @@ export class StudentComponent implements OnInit {
     name = name.trim();
     major = major.trim();
     if(!name || !major) {return;}
-    this.studentService.addStudent({name, major} as Student)
+    this.studentService.addStudent({name:name, major:major})
       .subscribe(student => {
         this.students.push(student);
       });
